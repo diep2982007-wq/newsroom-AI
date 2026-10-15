@@ -24,5 +24,5 @@ Xây dựng trang web giúp phóng viên và biên tập viên quản lý, tìm 
 
 ## 5. Liên kết
 - **Figma:** https://www.figma.com/make/IUtJfbccJFCupAwPmCd52s/Web-Interface-for-Newsroom-AI?t=JNvW3aA0C5YSIATZ-20&fullscreen=1
-- **GitHub:** 
+- **GitHub:** https://github.com/diep2982007-wq/newsroom-AI.git
 - **Video thuyết trình:** https://www.youtube.com/playlist?list=PLLh8AUCpIoDc
