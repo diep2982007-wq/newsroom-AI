@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsroom AI - Duyệt bài</title>
+    <link rel="stylesheet" href="bt.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">▥</div>
+            <h2>Newsroom <span>AI</span></h2>
+        </div>
+
+        <div class="menu">
+            <p class="menu-title">KHÔNG GIAN LÀM VIỆC</p>
+
+            <a href="#" data-menu="Dashboard">
+                <span class="icon">▦</span> Dashboard
+            </a>
+
+            <a href="#" data-menu="Trình soạn thảo">
+                <span class="icon">✎</span> Trình soạn thảo
+            </a>
+
+            <a href="#" data-menu="Trợ lý AI">
+                <span class="icon">✧</span> Trợ lý AI
+            </a>
+
+            <a href="#" data-menu="Nguồn tin">
+                <span class="icon">▢</span> Nguồn tin
+            </a>
+
+            <a href="#" class="active" data-menu="Duyệt bài">
+                <span class="icon">✓</span> Duyệt bài
+                <span class="menu-count">8</span>
+            </a>
+
+            <a href="#" data-menu="Xuất bản">
+                <span class="icon">➤</span> Xuất bản
+                <span class="menu-count">4</span>
+            </a>
+
+            <a href="#" data-menu="Phân tích">
+                <span class="icon">▥</span> Phân tích
+            </a>
+
+            <a href="#" data-menu="Thư viện Media">
+                <span class="icon">▱</span> Thư viện Media
+            </a>
+
+            <p class="menu-title system-title">HỆ THỐNG</p>
+
+            <a href="#" data-menu="Cài đặt">
+                <span class="icon">♧</span> Cài đặt
+            </a>
+        </div>
+
+        <div class="user-profile">
+            <div class="avatar">LA</div>
+            <div class="user-info">
+                <strong>Lan Anh</strong>
+                <small>Phóng viên</small>
+            </div>
+            <span class="logout">⇥</span>
+        </div>
+
+    </aside>
+
+    
+    <div class="workspace">
+
+       
+        <header class="header">
+
+            <div class="breadcrumb">
+                <span>Không gian làm việc</span>
+                <span>›</span>
+                <strong>Duyệt bài</strong>
+            </div>
+
+            <div class="header-actions">
+
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="⌕  Tìm kiếm bài viết, nguồn tin..."
+                >
+
+                <button class="btn-primary" id="newArticle">
+                    ＋ &nbsp; Bài viết mới
+                </button>
+
+                <button class="header-icon" id="themeBtn">☾</button>
+                <button class="header-icon" id="notificationBtn">♧</button>
+
+                <div class="avatar small">LA</div>
+
+            </div>
+
+        </header>
+
+        
+        <main class="content">
+
+            <div class="page-heading">
+
+                <div>
+                    <h1>Hàng đợi biên tập</h1>
+                    <p>Đánh giá, ưu tiên và quản lý nội dung đang chờ xử lý.</p>
+                </div>
+
+                <button class="btn-outline" id="advancedFilter">
+                    ☰ &nbsp; Bộ lọc nâng cao
+                </button>
+
+            </div>
+
+            
+            <div class="article-panel">
+
+              
+                <div class="tabs">
+                    <button data-tab="pitch">Pitch <span>3</span></button>
+                    <button data-tab="draft" class="active">
+                        Draft <span>8</span>
+                    </button>
+                    <button data-tab="factcheck">
+                        Chờ fact-check <span>5</span>
+                    </button>
+                    <button data-tab="publish">
+                        Chờ đăng <span>4</span>
+                    </button>
+                </div>
+
+               
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="⌕  Tìm theo tiêu đề, tác giả..."
+                    >
+
+                    <select id="statusFilter">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="Chờ duyệt">Chờ duyệt</option>
+                        <option value="Bản nháp">Bản nháp</option>
+                        <option value="Chờ fact-check">Chờ fact-check</option>
+                        <option value="Chờ đăng">Chờ đăng</option>
+                    </select>
+
+                    <select id="priorityFilter">
+                        <option value="">Mọi ưu tiên</option>
+                        <option value="Cao">Cao</option>
+                        <option value="Trung bình">Trung bình</option>
+                        <option value="Thấp">Thấp</option>
+                    </select>
+
+                    <select id="categoryFilter">
+                        <option value="">Tất cả danh mục</option>
+                        <option value="Công nghệ">Công nghệ</option>
+                        <option value="Du lịch">Du lịch</option>
+                        <option value="Kinh tế">Kinh tế</option>
+                        <option value="Xã hội">Xã hội</option>
+                    </select>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>TIÊU ĐỀ</th>
+                                <th>TÁC GIẢ</th>
+                                <th>NGÀY TẠO</th>
+                                <th>ƯU TIÊN</th>
+                                <th>TRẠNG THÁI</th>
+                                <th>HÀNH ĐỘNG</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="articleBody">
+                            <!-- JavaScript tạo các hàng -->
+                        </tbody>
+                    </table>
+
+                </div>
+
+               
+                <div class="table-footer">
+
+                    <p id="paginationInfo">Hiển thị 1-4 trong 8 bài</p>
+
+                    <div class="pagination">
+                        <button id="prevBtn">Trước</button>
+                        <button id="nextBtn">Sau</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2 id="modalTitle">Chi tiết bài viết</h2>
+            <button id="closeModal">×</button>
+        </div>
+
+        <div id="modalBody"></div>
+
+    </div>
+</div>
+
+<script src="bt.js"></script>
+</body>
+</html>
